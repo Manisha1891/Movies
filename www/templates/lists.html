@@ -1,0 +1,11 @@
+<ion-view view-title="Movies List">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="list in lists" ng-click="View(list)">
+        {{list.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+<!-- href="#/app/lists/{{list.id}}" -->

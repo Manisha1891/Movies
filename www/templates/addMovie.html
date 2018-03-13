@@ -1,0 +1,49 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Add Movie</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeAddMovie()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form name="formData" class="form-group" ng-submit="doAddMovie()">
+      <div class="list">
+        <div class="form-group">
+          <label class="item item-input">
+            <span class="input-label">Movie Name</span>
+            <input type="text" ng-model="addMovieData.name" class="form-control" id="name" placeholder="Name" required name="name">
+            <div class="pull-right" ng-repeat="(field,value) in formData.name.$error" ng-show="formData.name.$touched">
+              <span class="label label-danger" ng-if="field=='required' && value">Please Enter Movie Name</span>
+            </div>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="item item-input">
+            <span class="input-label">Year</span>
+            <input type="number" ng-model="addMovieData.year" class="form-control" id="year" placeholder="Year" name="year" required>
+            <div class="pull-right" ng-repeat="(field,value) in formData.year.$error" ng-show="formData.year.$touched">
+              <span class="label label-danger" ng-if="field=='required' && value">Please Enter Year</span>
+
+            </div>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="item item-input">
+            <span class="input-label">Genre</span>
+            <input type="text" ng-model="addMovieData.genre" class="form-control" id="genre" placeholder="Genre" name="genre">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="item item-input">
+            <span class="input-label">Synopsis</span>
+            <textarea rows="4" cols="40" ng-model="addMovieData.synopsis" class="form-control" id="synopsis" placeholder="Synopsis" name="synopsis"></textarea>
+          </label>
+        </div>
+        <label class="item">
+          <button class="button button-block button-positive" ng-click="submitForm(addMovieData)" class="btn btn-default" ng-disabled="formData.$invalid"
+            promise-btn>ADD</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

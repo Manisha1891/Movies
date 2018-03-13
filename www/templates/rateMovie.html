@@ -1,0 +1,49 @@
+<ion-view view-title="Rate Movies">
+  <ion-content>
+   
+
+    <body ng-app="starter">
+
+      <table>
+        <tr>
+          <td>
+
+            <div ng-controller="ListsCtrl" align="Left">
+              <div ng-repeat="list in lists">{{list.name}}
+                <div ng-controller="StarCtrl">
+                  <span ng-repeat="rating in ratings">{{rating.current}} out of {{rating.max}}
+                    <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating,list)"></div>
+                  </span>
+                  <br>
+                </div>
+
+              </div>
+            </div>
+          </td>
+
+        </tr>
+      </table>
+
+      <!-- <div class="row">
+        <div class="col-50">
+          <div ng-controller="ListsCtrl" align="Left">
+            <span ng-repeat="list in lists">{{list.title}}
+
+            </span>
+          </div>
+        </div>
+        <div class="col-50">
+
+          <div ng-controller="StarCtrl" align="right">
+            <span ng-repeat="rating in ratings">{{rating.current}} out of {{rating.max}}
+              <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
+            </span>
+            <br>
+          </div>
+
+
+        </div>
+      </div> -->
+    </body>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,34 @@
+<ion-view view-title="Movie Detail">
+  <ion-content>
+
+    <ion-list class="text-over">
+      <ion-item>
+        Title: {{movies.name}}
+
+      </ion-item>
+      <ion-item>
+        Year: {{movies.year}}
+
+      </ion-item>
+      <ion-item>
+        Genre: {{movies.genre}}
+
+      </ion-item>
+      <ion-item>
+        Synopsis: <textarea rows="4" cols="40">{{movies.synopsis}}</textarea>
+
+      </ion-item>
+      <ion-item ng-controller="StarCtrl">
+        Rating:
+        <span ng-repeat="rating in ratings1">{{movies.rating}} out of {{rating.max}}
+          <div star-rating rating-value="rating.current" max="rating.max"></div>
+        </span>
+        <br>
+
+
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
